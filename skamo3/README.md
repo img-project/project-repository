@@ -5,6 +5,7 @@
  - Conv2D - BatchNormalization - ReLU  - maxpooling - Dropout - GlovalAveragePooling - 'sotfmax' - classification(7)
  - loss Function = sparse_categorical_crossentropy
  - optimizer = Adam
+ - model의 parameter 약 50만개
  
  
  
@@ -30,6 +31,8 @@
 ## 2차 TEST
  - Batchsize : 32->64 각 학습마다 7개의 label이 골고루 들어갈 수 있도록 하기 위함
  - 모델 Depth 낮추고 filter 갯수 증가
- - layer :  96 - 256 - 128 - 256 - 128 - 7 
+ - layer :  96 - 128 - 96 - 96 - 32 - 7 
+ - model의 parameter 약 23만개 : 모델의 pattern을 단순화 시켜서 학습
+ 
  ### TEST 결과
  - epochs = 
