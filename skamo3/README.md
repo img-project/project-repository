@@ -26,3 +26,4 @@
 
 ## 2차 TEST
  - Model 변화 : 모델 depth 줄이고 filter 갯수 늘리기  
+ - 
