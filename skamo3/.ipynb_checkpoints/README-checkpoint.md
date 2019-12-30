@@ -1,7 +1,11 @@
 # skamo3 README
-
+ - Conv = Convolutional layer
+ - BN = BatchNormalization
+ - MP = MaxPolling
+ - DP = DropOut
+ - GAP = GlovalAveragePooling
  
-## TEST1
+## Test 1
  - (Conv8-BN-ReLU)x3-MP-DP -> (Conv32-BN-ReLU)x3-MP-DP -> (Conv64-BN-ReLU)x3-MP-DP -> (Conv128-BN-ReLU)x3-MP-DP -> GAP -> Dense256(ReLU) -> Dense128(ReLU) -> Dense7(softmax)
  - Batchsize : 32
  
@@ -20,7 +24,7 @@
     2. Model의 depth는 줄이고 filter의 갯수는 늘려서 큰 feature들을 가지고 분류해 보기
     3. 다른 Dataset을 이용해서 Model이 잘 맞는지 확인해 보기
 
-## 2차 TEST
+## Test 2
  - layer :  96 - 128 - 96 - 96 - 32 - 7 
  - Conv96-BN-ReLU-MP-DP -> Conv128-BN-ReLU-MP-DP -> Conv96-BN-ReLU-MP-DP -> Conv96-BN-ReLU-MP-DP -> Dense32(ReLU) -> Dense7(softmax)
  
