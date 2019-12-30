@@ -26,6 +26,6 @@
  - learning rate : 0.003
  
  ### Test Result
- - loss : 
- - train accuracy :
- - test accuracy :
+ - loss : 0.3775
+ - train accuracy : 0.8608
+ - test accuracy : 0.6119
