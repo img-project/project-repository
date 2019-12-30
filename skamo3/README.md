@@ -1,16 +1,8 @@
 # skamo3 README
 
-## 모델 기본 구성
- - Input shape == 96,96,1
- - Conv2D - BatchNormalization - ReLU  - maxpooling - Dropout - GlovalAveragePooling - 'sotfmax' - classification(7)
- - loss Function = sparse_categorical_crossentropy
- - optimizer = Adam
- - model의 parameter 약 50만개
  
- 
- 
-## 1차 TEST
- - Layer : 8x3 - 32x3 - 64x3 - 128x3 - 256 - 128 - 7
+## TEST1
+ - (Conv8-BN-ReLU)x3-MP-DP -> (Conv32-BN-ReLU)x3-MP-DP -> (Conv64-BN-ReLU)x3-MP-DP -> (Conv128-BN-ReLU)x3-MP-DP -> GAP -> Dense256(ReLU) -> Dense128(ReLU) -> Dense7(softmax)
  - Batchsize : 32
  
  ### TEST 결과
@@ -29,15 +21,8 @@
     3. 다른 Dataset을 이용해서 Model이 잘 맞는지 확인해 보기
 
 ## 2차 TEST
-<<<<<<< HEAD
- - Model 변화 : 모델 depth 줄이고 filter 갯수 늘리기  
- - 
-=======
- - Batchsize : 32->64 각 학습마다 7개의 label이 골고루 들어갈 수 있도록 하기 위함
- - 모델 Depth 낮추고 filter 갯수 증가
  - layer :  96 - 128 - 96 - 96 - 32 - 7 
- - model의 parameter 약 23만개 : 모델의 pattern을 단순화 시켜서 학습
+ - Conv96-BN-ReLU-MP-DP -> Conv128-BN-ReLU-MP-DP -> Conv96-BN-ReLU-MP-DP -> Conv96-BN-ReLU-MP-DP -> Dense32(ReLU) -> Dense7(softmax)
  
  ### TEST 결과
  - epochs = 
->>>>>>> 354204660a6747aa2352be975e4ed9b013b08667

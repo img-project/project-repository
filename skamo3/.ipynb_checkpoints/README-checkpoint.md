@@ -1,21 +1,17 @@
 # skamo3 README
 
-## 모델 기본 구성
- - Input shape == 96,96,1
- - Conv2D - BatchNormalization - ReLU (3단계 3회 반복) - maxpooling - Dropout - GlovalAveragePooling - 'sotfmax' - classification(7)
- - Layer 진행 8x3 - 32x3 - 64x3 - 128x3 - 256 - 128 - 7
- - optimizer = Adam
- - loss Function = sparse_categorical_crossentropy
  
+## TEST1
+ - (Conv8-BN-ReLU)x3-MP-DP -> (Conv32-BN-ReLU)x3-MP-DP -> (Conv64-BN-ReLU)x3-MP-DP -> (Conv128-BN-ReLU)x3-MP-DP -> GAP -> Dense256(ReLU) -> Dense128(ReLU) -> Dense7(softmax)
+ - Batchsize : 32
  
-## 1차 TEST
+ ### TEST 결과
  - epochs = 60
  - loss : 0.3132
  - train accuracy : 0.8855
  - test accuracy : 0.6439  
  
-
- ### 문제
+  ### 문제
  - epochs 에 변화를 주어도 train accuracy는 올라가지만 test accuracy는 0.65 근처에서 더 이상 올라가지 않는 현상 발견
  - 오히려 일정 수준부터는 떨어짐
  ### 원인 분석  
@@ -25,4 +21,8 @@
     3. 다른 Dataset을 이용해서 Model이 잘 맞는지 확인해 보기
 
 ## 2차 TEST
- - Model 변화 : 모델 depth 줄이고 filter 갯수 늘리기  
+ - layer :  96 - 128 - 96 - 96 - 32 - 7 
+ - Conv96-BN-ReLU-MP-DP -> Conv128-BN-ReLU-MP-DP -> Conv96-BN-ReLU-MP-DP -> Conv96-BN-ReLU-MP-DP -> Dense32(ReLU) -> Dense7(softmax)
+ 
+ ### TEST 결과
+ - epochs = 
