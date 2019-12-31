@@ -36,6 +36,7 @@
  - BatchSize : 96
  - epoch : 300
  - learning rate : 0.003
+ - total params : 1,994,631
  
  ### Test Result
  - loss : 0.0763
