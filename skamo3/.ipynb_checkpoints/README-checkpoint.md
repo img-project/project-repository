@@ -43,3 +43,14 @@
  - train accuracy : 0.9736
  - test accuracy : 0.6570
  
+ ## Test 4
+  - (Conv16-LeRU)x3-BN(before LeRU)-MP-DO(0.3) -> (Conv32-LeRU)x3-BN(before LeRU)-MP-DO(0.3) -> (Conv64-LeRU)x3-BN(before LeRU)-MP-DO(0.3) -> (Conv128-LeRU)x3-BN(before LeRU)-MP-DO(0.3) -> (Conv256-LeRU)x3-BN(before LeRU)-MP-DO(0.3) ->(Conv512-LeRU)x3-BN(before LeRU)-MP-DO(0.3) -> GAP -> Dense128(LeRU) -> Dense64(LeRU) -> Dense7(softmax)
+ - BatchSize : 96
+ - epoch : 73
+ - learning rate : 0.003
+ - total params : 7,942,823
+ 
+ ### Test Result 
+ - loss : 0.4823
+ - train accuracy : 0.8206
+ - test accuracy : 0.6394
